@@ -1,15 +1,28 @@
 import React from 'react';
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import { PokemonDetails } from './features/pokemonDetails/PokemonDetails';
 import './App.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {NotFound} from "./components";
+import {FrontSide} from "./features/pokemon/FrontSide";
+import {BackSide} from "./features/pokemon/BackSide";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<PokemonDetails />} />
+            <Route path="/not-found" element={<NotFound />} />
+            <Route path="/frontside" element={<FrontSide />} />
+            <Route path="/backside" element={<BackSide />} />
+            <Route path=":id" element={<PokemonDetails />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>,
+          <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <span>
