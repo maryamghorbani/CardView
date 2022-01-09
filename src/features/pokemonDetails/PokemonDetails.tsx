@@ -33,7 +33,6 @@ export function PokemonDetails() {
   }, [id])
 
   return (
-    <div>
       <div className={styles.row}>
         <div
             onClick={() => dispatch(flipCard())}
@@ -41,6 +40,6 @@ export function PokemonDetails() {
           {showFrontSide ? <FrontSide /> : <BackSide />}
         </div>
       </div>
-    </div>
+
   );
 }
