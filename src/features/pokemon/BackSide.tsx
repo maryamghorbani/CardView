@@ -2,7 +2,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
 
 export function BackSide() {
     return <>
-        <div className="p-24 bg-white shadow-md rounded-lg text-gray-900">
+        <div className="w-card h-card p-24 bg-white shadow-md rounded-lg text-gray-900">
             <div className="text-center mt-2 mb-28">
                 <p className="text-stone-300 text-4xl font-extrabold">#1</p>
                 <p className="text-7xl font-black">Blubasaur</p>
