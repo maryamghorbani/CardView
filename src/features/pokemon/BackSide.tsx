@@ -1,3 +1,5 @@
+import ProgressBar from "@ramonak/react-progress-bar";
+
 export function BackSide() {
     return <>
         <div className="p-24 bg-white shadow-md rounded-lg text-gray-900">
@@ -8,22 +10,12 @@ export function BackSide() {
 
             <div className="">
                 <div className="relative mb-9">
-                    <p className="text-left text-base font-extrabold text-red-600">HP</p>
-                    <div className="w-full flex">
-                        <div className="w-80 overflow-hidden h-2.5 mt-px text-xs flex rounded bg-neutral-100 relative">
-                            <div style={{ width: "30%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-600"></div>
-                        </div>
-                        <p className="w-9 text-base font-extrabold leading-3 text-red-600">45</p>
-                    </div>
+                    <p className="text-left text-2xl font-extrabold text-red-600 pl-4">HP</p>
+                    <ProgressBar className="justify-center flex items-center" completed="45" maxCompleted={255} bgColor="#ff4545" width="80%" height="10px" baseBgColor="#f5f5f5" labelAlignment="outside" labelColor="#ff4545" labelSize="1.5625rem" />
                 </div>
                 <div className="relative mb-9">
-                    <p className="text-left text-base font-extrabold text-red-600">HP</p>
-                    <div className="w-full flex">
-                        <div className="w-80 overflow-hidden h-2.5 mt-px text-xs flex rounded bg-neutral-100 relative">
-                            <div style={{ width: "30%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-600"></div>
-                        </div>
-                        <p className="w-9 text-base font-extrabold leading-3 text-red-600">45</p>
-                    </div>
+                    <p className="text-left text-2xl font-extrabold text-red-600 pl-4">HP</p>
+                    <ProgressBar className="justify-center flex items-center" completed="45" maxCompleted={255} bgColor="#ff4545" width="80%" height="10px" baseBgColor="#f5f5f5" labelAlignment="outside" labelColor="#ff4545" labelSize="1.5625rem" />
                 </div>
             </div>
 
