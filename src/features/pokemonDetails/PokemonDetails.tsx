@@ -10,6 +10,8 @@ import {
 } from './pokemonSlice';
 import styles from './PokemonDetails.module.css';
 import {Pokemon} from "./pokemonAPI";
+import {FrontSide} from "../pokemon/FrontSide";
+import {BackSide} from "../pokemon/BackSide";
 
 export function PokemonDetails() {
   const {id} = useParams();
@@ -33,15 +35,11 @@ export function PokemonDetails() {
   return (
     <div>
       <div className={styles.row}>
-        <div>{pokemon?.name}</div>
-        <div>{pokemon?.image}</div>
-        <div>{pokemon?.id}</div>
-        <button
-            className={styles.button}
+        <div
             onClick={() => dispatch(flipCard())}
         >
-          {showFrontSide ? 'Show Back' : 'Show Front'}
-        </button>
+          {showFrontSide ? <FrontSide /> : <BackSide />}
+        </div>
       </div>
     </div>
   );
