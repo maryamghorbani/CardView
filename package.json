@@ -30,10 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier-format": "prettier --config .prettierrc.json 'src/**/*.ts' --write"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "prettier-format": "prettier --config .prettierrc.json 'src/**/*.ts' --write",
+    "eslint-runner": "eslint src/**/*.ts --fix"
   },
   "browserslist": {
     "production": [
@@ -48,7 +46,16 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
     "autoprefixer": "^10.4.2",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
     "postcss": "^8.4.5",
     "prettier": "^2.5.1",
