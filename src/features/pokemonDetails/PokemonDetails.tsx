@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {useParams, useNavigate} from "react-router-dom";
 
+import ReactCardFlip from 'react-card-flip';
+
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 import {
   fetchPokemonDetail,
@@ -34,11 +36,15 @@ export function PokemonDetails() {
 
   return (
       <div className={styles.row}>
-        <div
-            onClick={() => dispatch(flipCard())}
-        >
-          {showFrontSide ? <FrontSide /> : <BackSide />}
-        </div>
+        <ReactCardFlip isFlipped={!showFrontSide} flipDirection="horizontal">
+          <div onClick={e => dispatch(flipCard())}>
+            <FrontSide />
+          </div>
+
+          <div onClick={e => dispatch(flipCard())}>
+            <BackSide />
+          </div>
+        </ReactCardFlip>
       </div>
 
   );

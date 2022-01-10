@@ -1,16 +1,17 @@
 import Axios from 'axios';
 // A mock function to mimic making an async request for data
-interface PokemonStat{
-  name: String;
+
+export interface PokemonStat{
+  name: string;
   value: number;
 }
 
 export interface Pokemon{
   id: number;
-  name: String;
-  image: String;
-  tags: [String];
-  stats: [PokemonStat],
+  name: string;
+  image: string;
+  tags: string[];
+  stats: PokemonStat[],
 }
 
 function parserPokemon(data: any): Pokemon {

@@ -14,6 +14,36 @@ const initialState: PokemonState = {
   show: 'frontside',
 };
 
+export const PokemonStatColor: {[key: string]: string[]} = {
+  "hp": ['HP', '#FF5959',],
+  "attack": ['Attack', '#F5AC78',],
+  "defense": ['Defense', '#FAE078',],
+  "special-attack": ['Sp.Atk', '#9DB7F5',],
+  "special-defense": ['Sp.Def', '#A7DB8D',],
+  "speed": ['Speed', '#FA92B2', ],
+}
+
+export const PokemonColor: {[key: string]: string} = {
+  "normal": "#929DA3",
+  "fire": "#FF9D55",
+  "ground": "#D97845",
+  "ghost": "#5269AD",
+  "steel": "#5A8EA2",
+  "dragon": "#0B6DC3",
+  "fairy": "#EC8FE6",
+  "psychic": "#FA7179",
+  "dark": "#5A5465",
+  "rock": "#C5B78C",
+  "bug": "#ABB642",
+  "water": "#5090D6",
+  "grass": "#63BC5A",
+  "electric": "#F4D23C",
+  "ice": "#73CEC0",
+  "fighting": "#CE416B",
+  "flying": "#8FA9DE",
+  "poison": "#AA6BC8",
+}
+
 export const fetchPokemonDetail = createAsyncThunk(
     'pokemon/fetchData',
   async (id: number) => {
