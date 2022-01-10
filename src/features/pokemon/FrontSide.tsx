@@ -20,12 +20,12 @@ export function FrontSide() {
           #
           {pokemon?.id}
         </p>
-        <p className="text-7xl font-black">{pokemon?.name}</p>
+        <p className="text-7xl font-black capitalize">{pokemon?.name}</p>
       </div>
       <div className="justify-center flex">
-        <Image className="" src={pokemon?.image} />
+        <img className="" src={pokemon?.image} />
       </div>
-      <div className="px-5 py-2.5 mt-20 mb-5">
+      <div className="px-5 py-2.5 mb-5">
         {TagComponent(pokemon?.tags ?? [])}
       </div>
     </div>
