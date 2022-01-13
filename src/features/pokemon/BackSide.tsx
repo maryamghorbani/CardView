@@ -1,8 +1,11 @@
-import ProgressBar from '@ramonak/react-progress-bar';
 import React from 'react';
-import { Pokemon, PokemonStat } from '../pokemonDetails/pokemonAPI';
+
+import ProgressBar from '@ramonak/react-progress-bar';
 import { useAppSelector } from '../../app/hooks';
-import { PokemonColor, PokemonStatColor, selectPokemon } from '../pokemonDetails/pokemonSlice';
+
+// import components
+import { Pokemon, PokemonStat } from '../pokemonDetails/pokemonAPI';
+import { PokemonStatColor, selectPokemon } from '../pokemonDetails/pokemonSlice';
 
 const StatComponent = (stats: PokemonStat[] | undefined) => stats?.map((stat) => (
   <div className="relative mb-9" key={stat.name}>

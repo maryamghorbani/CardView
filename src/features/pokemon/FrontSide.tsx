@@ -1,11 +1,13 @@
-import { Image } from 'antd';
 import React from 'react';
-import { Pokemon } from '../pokemonDetails/pokemonAPI';
+
 import { useAppSelector } from '../../app/hooks';
+
+// import components
+import { Pokemon } from '../pokemonDetails/pokemonAPI';
 import { PokemonColor, selectPokemon } from '../pokemonDetails/pokemonSlice';
 
 const TagComponent = (tags:string[]) => tags.map((tag) => (
-  <button style={{ backgroundColor: PokemonColor[tag] }} key={tag} className="inline-block rounded-lg font-semibold text-white mr-1 px-6 py-1 text-lg">
+  <button type="button" style={{ backgroundColor: PokemonColor[tag] }} key={tag} className="inline-block rounded-lg font-semibold text-white mr-1 px-6 py-1 text-lg">
     {tag}
   </button>
 ));
@@ -23,7 +25,7 @@ export function FrontSide() {
         <p className="text-7xl font-black capitalize">{pokemon?.name}</p>
       </div>
       <div className="justify-center flex">
-        <img className="" src={pokemon?.image} />
+        <img alt="pokemon" className="" src={pokemon?.image} />
       </div>
       <div className="px-5 py-2.5 mb-5">
         {TagComponent(pokemon?.tags ?? [])}

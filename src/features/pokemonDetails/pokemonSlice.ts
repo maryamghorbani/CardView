@@ -46,17 +46,14 @@ export const PokemonColor: { [key: string]: string } = {
 
 export const fetchPokemonDetail = createAsyncThunk(
   'pokemon/fetchData',
-  async (id: number) => {
-    return await fetchDetail(id);
-  }
+  async (id: number) => await fetchDetail(id),
 );
 
 export const fetchPokemonRandomly = createAsyncThunk(
   'pokemon/fetchData',
-  async () => {
-    return await fetchRandomly();
-    // The value we return becomes the `fulfilled` action payload
-  }
+  async () => await fetchRandomly(),
+  // The value we return becomes the `fulfilled` action payload
+
 );
 
 export const pokemonSlice = createSlice({
@@ -92,8 +89,7 @@ export const pokemonSlice = createSlice({
 export const { backside, frontside } = pokemonSlice.actions;
 
 export const selectPokemon = (state: RootState) => state.pokemon.value;
-export const selectFrontSide = (state: RootState) =>
-  state.pokemon.show === 'frontside';
+export const selectFrontSide = (state: RootState) => state.pokemon.show === 'frontside';
 
 export const flipCard = (): AppThunk => (dispatch, getState) => {
   const currentShow = getState().pokemon.show;

@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import { PokemonDetails } from './features/pokemonDetails/PokemonDetails';
 import './App.css';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {NotFound} from "./components";
-import {FrontSide} from "./features/pokemon/FrontSide";
-import {BackSide} from "./features/pokemon/BackSide";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+// import components
+import { PokemonDetails } from './features/pokemonDetails/PokemonDetails';
+import { NotFound } from './components';
+import { FrontSide } from './features/pokemon/FrontSide';
+import { BackSide } from './features/pokemon/BackSide';
 
 function App() {
   return (

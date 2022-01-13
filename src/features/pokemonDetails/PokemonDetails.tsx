@@ -1,51 +1,53 @@
-import React, {useEffect, useState} from 'react';
-import {useParams, useNavigate} from "react-router-dom";
+import React, { useEffect } from 'react';
+
+import { useParams, useNavigate } from 'react-router-dom';
 
 import ReactCardFlip from 'react-card-flip';
-
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
+
+// import styles
+import styles from './PokemonDetails.module.css';
+
 import {
   fetchPokemonDetail,
-  selectPokemon,
   fetchPokemonRandomly, selectFrontSide,
-    flipCard,
+  flipCard,
 } from './pokemonSlice';
-import styles from './PokemonDetails.module.css';
-import {Pokemon} from "./pokemonAPI";
-import {FrontSide} from "../pokemon/FrontSide";
-import {BackSide} from "../pokemon/BackSide";
+
+// import components
+import { FrontSide } from '../pokemon/FrontSide';
+import { BackSide } from '../pokemon/BackSide';
 
 export function PokemonDetails() {
-  const {id} = useParams();
-  let navigate = useNavigate()
-  const pokemon: Pokemon|null = useAppSelector(selectPokemon);
+  const { id } = useParams();
+  const navigate = useNavigate();
   const showFrontSide: boolean = useAppSelector(selectFrontSide);
   const dispatch = useAppDispatch();
-  //TODO: handle status 404
+  // TODO: handle status 404
   useEffect(() => {
-    if(id) {
-      if(parseInt(id)){
-        dispatch(fetchPokemonDetail(parseInt(id)))
-      }else{
-        navigate('/not-found')
+    if (id) {
+      if (parseInt(id)) {
+        dispatch(fetchPokemonDetail(parseInt(id)));
+      } else {
+        navigate('/not-found');
       }
-    }else{
-      dispatch(fetchPokemonRandomly())
+    } else {
+      dispatch(fetchPokemonRandomly());
     }
-  }, [id])
+  }, [id]);
 
   return (
-      <div className={styles.row}>
-        <ReactCardFlip isFlipped={!showFrontSide} flipDirection="horizontal">
-          <div onClick={e => dispatch(flipCard())}>
-            <FrontSide />
-          </div>
+    <div className={styles.row}>
+      <ReactCardFlip isFlipped={!showFrontSide} flipDirection="horizontal">
+        <div onClick={(e) => dispatch(flipCard())}>
+          <FrontSide />
+        </div>
 
-          <div onClick={e => dispatch(flipCard())}>
-            <BackSide />
-          </div>
-        </ReactCardFlip>
-      </div>
+        <div onClick={(e) => dispatch(flipCard())}>
+          <BackSide />
+        </div>
+      </ReactCardFlip>
+    </div>
 
   );
 }
