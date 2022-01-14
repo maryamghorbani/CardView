@@ -12,7 +12,7 @@ const TagComponent = (tags:string[]) => tags.map((tag) => (
   </button>
 ));
 
-export function FrontSide() {
+function FrontSide() {
   const pokemon: Pokemon|null = useAppSelector(selectPokemon);
 
   return (
@@ -33,3 +33,4 @@ export function FrontSide() {
     </div>
   );
 }
+export default FrontSide;

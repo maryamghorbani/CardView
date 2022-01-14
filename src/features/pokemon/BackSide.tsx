@@ -8,7 +8,7 @@ import { Pokemon, PokemonStat } from '../pokemonDetails/pokemonAPI';
 import { PokemonStatColor, selectPokemon } from '../pokemonDetails/pokemonSlice';
 
 const StatComponent = (stats: PokemonStat[] | undefined) => stats?.map((stat) => (
-  <div className="relative mb-9" key={stat.name}>
+  <div className="relative mb-3" key={stat.name}>
     <p style={{ color: PokemonStatColor[stat.name][1] }} className="text-left text-2xl font-extrabold text-red-600 pl-7">
       {PokemonStatColor[stat.name][0]}
       {' '}
@@ -28,7 +28,7 @@ const StatComponent = (stats: PokemonStat[] | undefined) => stats?.map((stat) =>
   </div>
 ));
 
-export function BackSide() {
+function BackSide() {
   const pokemon: Pokemon | null = useAppSelector(selectPokemon);
 
   return (
@@ -48,3 +48,4 @@ export function BackSide() {
     </div>
   );
 }
+export default BackSide;

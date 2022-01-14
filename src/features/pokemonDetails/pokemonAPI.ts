@@ -24,14 +24,14 @@ function parserPokemon(data: any): Pokemon {
       (stat: { base_stat: number; stat: { name: String } }) => ({
         value: stat.base_stat,
         name: stat.stat.name,
-      }),
+      })
     ),
   };
 }
 
 export function fetchDetail(id: number) {
   return Axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then(
-    (responseData) => parserPokemon(responseData.data),
+    (responseData) => parserPokemon(responseData.data)
   );
 }
 
@@ -40,6 +40,6 @@ export function fetchRandomly() {
   const max = Math.floor(898);
   const id = Math.floor(Math.random() * (max - min + 1) + min);
   return Axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`).then(
-    (responseData) => parserPokemon(responseData.data),
+    (responseData) => parserPokemon(responseData.data)
   );
 }

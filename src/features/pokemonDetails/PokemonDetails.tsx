@@ -5,9 +5,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import ReactCardFlip from 'react-card-flip';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
 
-// import styles
-import styles from './PokemonDetails.module.css';
-
 import {
   fetchPokemonDetail,
   fetchPokemonRandomly, selectFrontSide,
@@ -15,10 +12,10 @@ import {
 } from './pokemonSlice';
 
 // import components
-import { FrontSide } from '../pokemon/FrontSide';
-import { BackSide } from '../pokemon/BackSide';
+import FrontSide from '../pokemon/FrontSide';
+import BackSide from '../pokemon/BackSide';
 
-export function PokemonDetails() {
+function PokemonDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
   const showFrontSide: boolean = useAppSelector(selectFrontSide);
@@ -37,7 +34,7 @@ export function PokemonDetails() {
   }, [id]);
 
   return (
-    <div className={styles.row}>
+    <div>
       <ReactCardFlip isFlipped={!showFrontSide} flipDirection="horizontal">
         <div onClick={(e) => dispatch(flipCard())}>
           <FrontSide />
@@ -51,3 +48,4 @@ export function PokemonDetails() {
 
   );
 }
+export default PokemonDetails;
