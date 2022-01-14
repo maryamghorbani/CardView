@@ -25,7 +25,7 @@ function FrontSide() {
         <p className="text-7xl font-black capitalize">{pokemon?.name}</p>
       </div>
       <div className="justify-center flex">
-        <img alt="pokemon" className="" src={pokemon?.image} />
+        <img alt="pokemon" src={pokemon?.image} />
       </div>
       <div className="px-5 py-2.5 mb-5">
         {TagComponent(pokemon?.tags ?? [])}

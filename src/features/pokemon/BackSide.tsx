@@ -41,7 +41,7 @@ function BackSide() {
         <p className="text-7xl font-black capitalize">{pokemon?.name}</p>
       </div>
 
-      <div className="">
+      <div>
         {StatComponent(pokemon?.stats ?? [])}
       </div>
 
