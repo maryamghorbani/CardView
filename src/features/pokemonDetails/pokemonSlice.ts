@@ -46,12 +46,12 @@ export const PokemonColor: { [key: string]: string } = {
 
 export const fetchPokemonDetail = createAsyncThunk(
   'pokemon/fetchData',
-  async (id: number) => await fetchDetail(id)
+  async (id: number) => await fetchDetail(id),
 );
 
 export const fetchPokemonRandomly = createAsyncThunk(
   'pokemon/fetchData',
-  async () => await fetchRandomly()
+  async () => await fetchRandomly(),
 );
 
 export const pokemonSlice = createSlice({
