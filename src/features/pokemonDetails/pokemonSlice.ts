@@ -85,7 +85,8 @@ export const pokemonSlice = createSlice({
 export const { backside, frontside } = pokemonSlice.actions;
 
 export const selectPokemon = (state: RootState) => state.pokemon.value;
-export const selectFrontSide = (state: RootState) => state.pokemon.show === 'frontside';
+export const selectFrontSide = (state: RootState) =>
+  state.pokemon.show === 'frontside';
 
 export const flipCard = (): AppThunk => (dispatch, getState) => {
   const currentShow = getState().pokemon.show;

@@ -23,8 +23,8 @@ function PokemonDetails() {
   // TODO: handle status 404
   useEffect(() => {
     if (id) {
-      if (parseInt(id)) {
-        dispatch(fetchPokemonDetail(parseInt(id)));
+      if (parseInt(id, 10)) {
+        dispatch(fetchPokemonDetail(parseInt(id, 10)));
       } else {
         navigate('/not-found');
       }
@@ -33,14 +33,18 @@ function PokemonDetails() {
     }
   }, [id]);
 
+  const flippHandler = (e: React.ChangeEvent<any>): void => {
+    e.preventDefault();
+    dispatch(flipCard());
+  };
+
   return (
     <div>
       <ReactCardFlip isFlipped={!showFrontSide} flipDirection="horizontal">
-        <div onClick={(e) => dispatch(flipCard())}>
+        <div onClick={flippHandler} onKeyDown={flippHandler} role="button" tabIndex={0}>
           <FrontSide />
         </div>
-
-        <div onClick={(e) => dispatch(flipCard())}>
+        <div onClick={flippHandler} onKeyDown={flippHandler} role="button" tabIndex={0}>
           <BackSide />
         </div>
       </ReactCardFlip>
